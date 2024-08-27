@@ -26,9 +26,10 @@ public class GameManager : MonoBehaviour
         }
     }
     void OnGUI () {
+      
         GUI.skin = layout;
-        GUI.Label(new Rect(Screen.width / 2 - 150 - 12, 20, 100, 100), "" + PlayerScore1);
-        GUI.Label(new Rect(Screen.width / 2 + 150 + 12, 20, 100, 100), "" + PlayerScore2);
+        GUI.Label(new Rect(Screen.width / 2 - 150 - 12, 20, 100, 300), "" + PlayerScore1);
+        GUI.Label(new Rect(Screen.width / 2 + 150 + 12, 20, 100, 300), "" + PlayerScore2);
 
 
         if (PlayerScore1 == 10)
@@ -42,8 +43,11 @@ public class GameManager : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+
+            if (Input.GetKey("escape"))
+
+                Application.Quit();
+
     }
 }
